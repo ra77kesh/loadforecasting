@@ -1,0 +1,56 @@
+%Electricity Load Requirement on Long Terms in Uttarakhand: A Case Study of Dehradun Smart City & Electric Vehicles  
+% Time interval t = (1998:1:2008)'; 
+% electric load e = [4050 4127 4374 4437 4615 ... 4810 5222 5454 5804 6300 6604.5]'; 
+% Plot plot(t, e,'bo'); 
+axis([1998 2030 4000 34000]); 
+title('electric load. 1998-2030'); 
+ylabel('Gwh');
+A(i,j) = s(i)^(n-j); 
+n = length(t); 
+s = (t-2004)/5; 
+A = zeros(n); 
+A(:,end) = 1; 
+for j = n-1:-1:1,
+A(:,j) = s .* A(:,j+1); 
+end
+v = (1998:2030)'; 
+x = (v-2004)/5; 
+w = (2020-2004)/5; 
+y = polyval(c,x); 
+z = polyval(c,w); 
+hold on plot(v,y,'k-'); 
+plot(2020,z,'ks'); 
+text(2020,z+15,num2str(z)); 
+hold off 
+v = (1998:2030)';
+x = (v -2004)/5; 
+w = (2030 -2004)/5; 
+y = polyval(c,x); 
+z = polyval(c,w); 
+hold on plot(v,y,'k -'); 
+plot(2030,z,'ks'); 
+text(2030,z+15,num2str(z)); 
+hold off v = (1998:2030)'; 
+x = (v -2004)/5; 
+w = (2020 -2004)/5; 
+y = polyval(c,x); 
+z = polyval(c,w); 
+hold on plot(v,y,'k -'); 
+plot(2020,z,'ks'); 
+text(2020,z+15,num2str(z)); 
+hold off v = (1998:2030)'; 
+x = (v -2004)/5; 
+w = (2028 -2004)/5; 
+y = polyval(c,x); z = polyval(c,w); 
+hold on plot(v,y,'k -'); 
+plot(2028,z,'ks');
+text(2028,z+15,num2str(z)); 
+hold off
+//Energy Demand in Uttarakhand 2025-2030
+figure
+x=[2025:2030];
+y=[15848.14 14925.17;16515.72 15007.66;17193.13 15893.25;18894.24 16045.97;19672.01 17872.29; 20777.24 19986.21];
+plot(x,y)
+ylabel('Energy (MU) 2025-2020')
+xlabel('Years')
+title('Energy Demand 2025-2030 (MU)','FontSize',12)
